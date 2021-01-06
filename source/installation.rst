@@ -1,24 +1,23 @@
 .. _installation:
 
-Installation
+Установка
 ------------
 
-Introduction
+Введение
 ~~~~~~~~~~~~
 
-Selenium Python bindings provides a simple API to write functional/acceptance
-tests using Selenium WebDriver.  Through Selenium Python API you can access all
-functionalities of Selenium WebDriver in an intuitive way.
+Selenium Python bindings предоставляют простое API для разработки функциональных и приёмочных
+тестов с использованием WebDriver Selenium. С помощью Python API для Selenium вы можете
+получить доступ ко всем функциям WebDriver Selenium интуитивно понятным образом.
 
-Selenium Python bindings provide a convenient API to access Selenium WebDrivers
-like Firefox, Ie, Chrome, Remote etc.  The current supported Python versions are
-3.5 and above.
+Selenium Python bindings предоставляют удобный API для обращения к таким WebDriver-ам Selenium
+как Firefox, Internet Explorer, Chrome, Remote и т.д. Текущие поддерживаемые версии Python -
+3.5 и выше.
 
-This documentation explains Selenium 2 WebDriver API.  Selenium 1 / Selenium RC
-API is not covered here.
+В этой документации описана работа с API WebDriver для Selenium 2, API Selenium 1 или Selenium RC не описаны.
 
 
-Downloading Python bindings for Selenium
+Скачивание привязок Python bindings для Selenium
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
