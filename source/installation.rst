@@ -21,8 +21,7 @@ Selenium Python bindings предоставляют удобный API для о
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-Use `pip <https://pip.pypa.io/en/latest/installing/>`_ to install the selenium
-package.  Python 3.6 has pip available in the `standard library
+Используйте команду `pip <https://pip.pypa.io/en/latest/installing/>`_ для установки пакета selenium.  Python 3.6 has pip available in the `standard library
 <https://docs.python.org/3.6/installing/index.html>`_.  Using `pip`, you can
 install selenium like this::
 
