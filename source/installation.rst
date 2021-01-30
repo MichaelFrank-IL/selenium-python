@@ -11,46 +11,43 @@ Selenium Python bindings предоставляют простое API для р
 получить доступ ко всем функциям WebDriver Selenium интуитивно понятным образом.
 
 Selenium Python bindings предоставляют удобный API для обращения к таким WebDriver-ам Selenium
-как Firefox, Internet Explorer, Chrome, Remote и т.д. Текущие поддерживаемые версии Python -
+как Firefox, Internet Explorer, Chrome, Remote и т.д. Текущая поддерживаемая версия Python -
 3.5 и выше.
 
-В этой документации описана работа с API WebDriver для Selenium 2, API Selenium 1 или Selenium RC не описаны.
+В этой документации описана работа с API WebDriver для Selenium 2 (API Selenium 1 или Selenium RC не описаны).
 
 
-Скачивание привязок Python bindings для Selenium
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Скачивание Python bindings для Selenium
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-
-Используйте команду `pip <https://pip.pypa.io/en/latest/installing/>`_ для установки пакета selenium.  Python 3.6 has pip available in the `standard library
-<https://docs.python.org/3.6/installing/index.html>`_.  Using `pip`, you can
-install selenium like this::
+Используйте команду `pip <https://pip.pypa.io/en/latest/installing/>`_ для установки пакета selenium.
+В Python 3.6 `pip` доступен в `стандартной библиотеке
+<https://docs.python.org/3.6/installing/index.html>`_.  С помощью `pip` вы можете установить selenium:
 
   pip install selenium
 
-You may consider using `virtualenv <http://www.virtualenv.org>`_ to create
-isolated Python environments.  Python 3 has `venv
-<https://docs.python.org/3/library/venv.html>`_ which is almost the same as
+Кроме того, можно использовать команду `virtualenv <http://www.virtualenv.org>`_ для создания
+изолированного виртуального окружения Python. В Python 3 вы можете использовать команду `venv
+<https://docs.python.org/3/library/venv.html>`_, которая практически эквивалентна
 virtualenv.
 
-You can also download Python bindings for Selenium from the `PyPI page for
-selenium package <https://pypi.python.org/pypi/selenium>`_. and install
-manually.
+Python bindings for Selenium можно скачать отсюда: `PyPI page for
+selenium package <https://pypi.python.org/pypi/selenium>`_. и установить вручную.
 
 Drivers
 ~~~~~~~
 
-Selenium requires a driver to interface with the chosen browser. Firefox, for
-example, requires `geckodriver
-<https://github.com/mozilla/geckodriver/releases>`_, which needs to be installed
-before the below examples can be run. Make sure it's in your `PATH`, e. g.,
-place it in `/usr/bin` or `/usr/local/bin`.
+Для работы Selenium необходим интерфейс к выбранному браузеру. Например для Firefox требуется `geckodriver
+<https://github.com/mozilla/geckodriver/releases>`_, который нужно установить
+до запуска приведённых ниже примеров. Также удостоверьтесь, что путь к драйверу есть в переменной окружения `PATH`,
+например в `/usr/bin` или `/usr/local/bin`.
 
-Failure to observe this step will give you an error
+Пропустив этот шаг вы получите ошибку:
 `selenium.common.exceptions.WebDriverException: Message: 'geckodriver'
 executable needs to be in PATH.`
 
-Other supported browsers will have their own drivers available. Links to some of
-the more popular browser drivers follow.
+У остальных поддерживаемых браузеров есть собственные драйверы. Ниже приведены ссылки на драйверы наиболее
+популярных браузеров:
 
 +--------------+-----------------------------------------------------------------------+
 | **Chrome**:  | https://sites.google.com/a/chromium.org/chromedriver/downloads        |
@@ -62,35 +59,36 @@ the more popular browser drivers follow.
 | **Safari**:  | https://webkit.org/blog/6900/webdriver-support-in-safari-10/          |
 +--------------+-----------------------------------------------------------------------+
 
-For more information about driver installation, please refer the `official
-documentation
+Для подробной информации об установке драйверов обратитесь к `официальной
+документации
 <https://www.selenium.dev/documentation/en/webdriver/driver_requirements/>`_.
 
-Detailed instructions for Windows users
+Инструкции для пользователей Windows
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. Note::
 
-  You should have an internet connection to perform this installation.
+  Для установки требуется соединение с интернетом.
 
-1. Install Python 3.6 using the `MSI available in python.org download page
+1. Установите Python 3.6 или старше, используя `файл MSI, доступный на странице download сайта python.org
    <http://www.python.org/download>`_.
 
-2. Start a command prompt using the ``cmd.exe`` program and run the ``pip``
-   command as given below to install `selenium`.
+2. Запустите командную строку (``cmd.exe``) и используйте команду ``pip``
+   для установки `selenium` как показано ниже.
 
    ::
    
      C:\Python35\Scripts\pip.exe install selenium
 
-Now you can run your test scripts using Python.  For example, if you have
-created a Selenium based script and saved it inside
-``C:\my_selenium_script.py``, you can run it like this::
+Теперь вы можете запускать тестовые скрипты на Python. Например, если у вас есть скрипт Selenium,
+расположенный в ``C:\my_selenium_script.py``, вы можете запустить его следующим образом:
 
-  C:\Python35\python.exe C:\my_selenium_script.py
+   ::
+
+    C:\Python35\python.exe C:\my_selenium_script.py
 
 
-Downloading Selenium server
+Скачивание сервера Selenium
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. note::
