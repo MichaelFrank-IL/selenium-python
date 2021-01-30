@@ -93,53 +93,47 @@ executable needs to be in PATH.`
 
 .. note::
 
-  **The Selenium server is only required if you want to use the remote
-  WebDriver**.  See the :ref:`selenium-remote-webdriver` section for more
-  details.  If you are a beginner learning Selenium, you can skip this section
-  and proceed with next chapter.
+  **Selenium server необходим только если вы хотите использовать удалённый
+  WebDriver**.  См. раздел :ref:`selenium-remote-webdriver` для более подробной информации.
+  Если вы начинающий в Selenium, вы можете пропустить этот раздел и перейти к следующей части.
 
-Selenium server is a Java program.  Java Runtime Environment (JRE) 1.6 or newer
-version is recommended to run Selenium server.
+Selenium server - это программа на Java. Для запуска Selenium server рекомендуется использовать
+ Java Runtime Environment (JRE) версии 1.6 или более новой.
 
-You can download Selenium server 2.x from the `download page of selenium website
-<http://seleniumhq.org/download/>`_.  The file name should be something like
-this: ``selenium-server-standalone-2.x.x.jar``.  You can always download the
-latest 2.x version of Selenium server.
+Скачать Selenium server 2.x можно `на странице download сайта selenium
+<http://seleniumhq.org/download/>`_.  Имя файла должно быть вида: ``selenium-server-standalone-2.x.x.jar``.
+Вы всегда можете скачать последнюю версию Selenium server 2.x.
 
-If Java Runtime Environment (JRE) is not installed in your system, you can
-download the `JRE from the Oracle website
-<http://www.oracle.com/technetwork/java/javase/downloads/index.html>`_.  If you
-are using a GNU/Linux system and have root access in your system, you can also
-use your operating system instructions to install JRE.
+Если Java Runtime Environment (JRE) не установлена на вашем компьютере, вы можете скачать её
+на сайте `JRE от Oracle
+<http://www.oracle.com/technetwork/java/javase/downloads/index.html>`_.  Если вы используете GNU/Linux,
+и у вас есть root-доступ к системе, используйте инструкции ОС для установки JRE.
 
-If `java` command is available in the PATH (environment variable), you can start
-the Selenium server using this command::
+Если команда `java` доступна в переменной окружения PATH, вы можете запустить Selenium server командой::
 
   java -jar selenium-server-standalone-2.x.x.jar
 
-Replace `2.x.x` with the actual version of Selenium server you downloaded from
-the site.
+Замените `2.x.x` на номер версии Selenium server, которую вы скачали.
 
-If JRE is installed as a non-root user and/or if it is not available in the PATH
-(environment variable), you can type the relative or absolute path to the `java`
-command.  Similarly, you can provide a relative or absolute path to Selenium
-server jar file.  Then, the command will look something like this::
+Если JRE установлена не-root пользователем и/или если она недостуна в переменной окружения PATH,
+вы можете написать относительный или абсолютный путь к команде `java`.
+Аналогично, вы можете указать относительный или абсолютный путь к jar-файлу Selenium server.
+В этом случае команда будет выглядеть как-то так::
 
   /path/to/java -jar /path/to/selenium-server-standalone-2.x.x.jar
 
 
-Installing from Git sources
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Установка из исходников в Git
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-To build Selenium Python from the source code, clone `the official repository
-<https://github.com/SeleniumHQ/selenium.git>`_.  It contains the source code for
-all official Selenium flavors, like Python, Java, Ruby and others.  The Python
-code resides in the ``/py`` directory.  To build, you will also need the `Bazel
-<https://www.bazel.build>`_ build system.
+Чтобы собрать Selenium Python из исходников, нужно клонировать `официальный репозиторий
+<https://github.com/SeleniumHQ/selenium.git>`_.  Он содержит исходники всех официальных Selenium,
+ таких как Python, Java, Ruby и других.  Код на Python находится в директории ``/py``.
+ Для сборки вам также потребуется сборщик `Bazel <https://www.bazel.build>`_.
 
 .. note::
 
-  Currently, as Selenium gets near to the 4.0.0 release, it requires Bazel 3.2.0
+  Сейчас, когда Selenium подбирается к релизу 4.0.0, он требует Bazel 3.2.0
   (`Install instructions
   <https://docs.bazel.build/versions/3.2.0/install.html>`_), even though 3.3.0
   is already available.
