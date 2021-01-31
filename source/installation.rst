@@ -134,15 +134,14 @@ Selenium server - это программа на Java. Для запуска Sel
 .. note::
 
   Сейчас, когда Selenium подбирается к релизу 4.0.0, он требует Bazel 3.2.0
-  (`Install instructions
-  <https://docs.bazel.build/versions/3.2.0/install.html>`_), even though 3.3.0
-  is already available.
+  (`Инструкции по установке
+  <https://docs.bazel.build/versions/3.2.0/install.html>`_) несмотря на то, что версия 3.3.0
+  уже доступна.
 
-To build a Wheel from the sources, run the following command from the repository
-root::
+Чтобы собрать Wheel из исходников, запустите следующую команду в корне репозитория::
 
   bazel //py:selenium-wheel
 
-This command will prepare the source code with some preprocessed JS files needed
-by some webdriver modules and build the ``.whl`` package inside the
-``./bazel-bin/py/`` directory.  Afterwards, you can use ``pip`` to install it.
+Эта команда подготовит исходный код с некоторыми предобработанными файлами JS, которые нужны некоторым модулям
+ webdriver, и соберёт пакет ``.whl`` в директории ``./bazel-bin/py/``.
+ После этого вы можете использовать ``pip`` для установки.
