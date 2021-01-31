@@ -1,0 +1,259 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>1. Установка &#8212; Selenium Python Bindings 2 documentation</title>
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="2. Getting Started" href="getting-started.html" />
+    <link rel="prev" title="Selenium with Python" href="index.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="installation">
+<span id="id1"></span><h1><span class="section-number">1. </span>Установка<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id2">
+<h2><span class="section-number">1.1. </span>Введение<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>Selenium Python bindings предоставляют простое API для разработки функциональных и приёмочных
+тестов с использованием WebDriver Selenium. С помощью Python API для Selenium вы можете
+получить доступ ко всем функциям WebDriver Selenium интуитивно понятным образом.</p>
+<p>Selenium Python bindings предоставляют удобный API для обращения к таким WebDriver-ам Selenium
+как Firefox, Internet Explorer, Chrome, Remote и т.д. Текущая поддерживаемая версия Python -
+3.5 и выше.</p>
+<p>В этой документации описана работа с API WebDriver для Selenium 2 (API Selenium 1 или Selenium RC не описаны).</p>
+</div>
+<div class="section" id="python-bindings-selenium">
+<h2><span class="section-number">1.2. </span>Скачивание Python bindings для Selenium<a class="headerlink" href="#python-bindings-selenium" title="Permalink to this headline">¶</a></h2>
+<p>Используйте команду <a class="reference external" href="https://pip.pypa.io/en/latest/installing/">pip</a> для установки пакета selenium.
+В Python 3.6 <cite>pip</cite> доступен в <a class="reference external" href="https://docs.python.org/3.6/installing/index.html">стандартной библиотеке</a>.  С помощью <cite>pip</cite> вы можете установить selenium:</p>
+<blockquote>
+<div><p>pip install selenium</p>
+</div></blockquote>
+<p>Кроме того, можно использовать команду <a class="reference external" href="http://www.virtualenv.org">virtualenv</a> для создания
+изолированного виртуального окружения Python. В Python 3 вы можете использовать команду <a class="reference external" href="https://docs.python.org/3/library/venv.html">venv</a>, которая практически эквивалентна
+virtualenv.</p>
+<p>Python bindings for Selenium можно скачать отсюда: <a class="reference external" href="https://pypi.python.org/pypi/selenium">PyPI page for
+selenium package</a>. и установить вручную.</p>
+</div>
+<div class="section" id="drivers">
+<h2><span class="section-number">1.3. </span>Drivers<a class="headerlink" href="#drivers" title="Permalink to this headline">¶</a></h2>
+<p>Для работы Selenium необходим интерфейс к выбранному браузеру. Например для Firefox требуется <a class="reference external" href="https://github.com/mozilla/geckodriver/releases">geckodriver</a>, который нужно установить
+до запуска приведённых ниже примеров. Также удостоверьтесь, что путь к драйверу есть в переменной окружения <cite>PATH</cite>,
+например в <cite>/usr/bin</cite> или <cite>/usr/local/bin</cite>.</p>
+<p>Пропустив этот шаг вы получите ошибку:
+<cite>selenium.common.exceptions.WebDriverException: Message: ‘geckodriver’
+executable needs to be in PATH.</cite></p>
+<p>У остальных поддерживаемых браузеров есть собственные драйверы. Ниже приведены ссылки на драйверы наиболее
+популярных браузеров:</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 16%" />
+<col style="width: 84%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Chrome</strong>:</p></td>
+<td><p><a class="reference external" href="https://sites.google.com/a/chromium.org/chromedriver/downloads">https://sites.google.com/a/chromium.org/chromedriver/downloads</a></p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Edge</strong>:</p></td>
+<td><p><a class="reference external" href="https://developer.microsoft.com/en-us/microsoft-edge/tools/webdriver/">https://developer.microsoft.com/en-us/microsoft-edge/tools/webdriver/</a></p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Firefox</strong>:</p></td>
+<td><p><a class="reference external" href="https://github.com/mozilla/geckodriver/releases">https://github.com/mozilla/geckodriver/releases</a></p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Safari</strong>:</p></td>
+<td><p><a class="reference external" href="https://webkit.org/blog/6900/webdriver-support-in-safari-10/">https://webkit.org/blog/6900/webdriver-support-in-safari-10/</a></p></td>
+</tr>
+</tbody>
+</table>
+<p>Для подробной информации об установке драйверов обратитесь к <a class="reference external" href="https://www.selenium.dev/documentation/en/webdriver/driver_requirements/">официальной
+документации</a>.</p>
+</div>
+<div class="section" id="windows">
+<h2><span class="section-number">1.4. </span>Инструкции для пользователей Windows<a class="headerlink" href="#windows" title="Permalink to this headline">¶</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Для установки требуется соединение с интернетом.</p>
+</div>
+<ol class="arabic">
+<li><p>Установите Python 3.6 или старше, используя <a class="reference external" href="http://www.python.org/download">файл MSI, доступный на странице download сайта python.org</a>.</p></li>
+<li><p>Запустите командную строку (<code class="docutils literal notranslate"><span class="pre">cmd.exe</span></code>) и используйте команду <code class="docutils literal notranslate"><span class="pre">pip</span></code>
+для установки <cite>selenium</cite> как показано ниже.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">C</span><span class="p">:</span>\<span class="n">Python35</span>\<span class="n">Scripts</span>\<span class="n">pip</span><span class="o">.</span><span class="n">exe</span> <span class="n">install</span> <span class="n">selenium</span>
+</pre></div>
+</div>
+</li>
+</ol>
+<p>Теперь вы можете запускать тестовые скрипты на Python. Например, если у вас есть скрипт Selenium,
+расположенный в <code class="docutils literal notranslate"><span class="pre">C:\my_selenium_script.py</span></code>, вы можете запустить его следующим образом:</p>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">C</span><span class="p">:</span>\<span class="n">Python35</span>\<span class="n">python</span><span class="o">.</span><span class="n">exe</span> <span class="n">C</span><span class="p">:</span>\<span class="n">my_selenium_script</span><span class="o">.</span><span class="n">py</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="selenium">
+<h2><span class="section-number">1.5. </span>Скачивание сервера Selenium<a class="headerlink" href="#selenium" title="Permalink to this headline">¶</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>Selenium server необходим только если вы хотите использовать удалённый
+WebDriver</strong>.  См. раздел <a class="reference internal" href="getting-started.html#selenium-remote-webdriver"><span class="std std-ref">Using Selenium with remote WebDriver</span></a> для более подробной информации.
+Если вы начинающий в Selenium, вы можете пропустить этот раздел и перейти к следующей части.</p>
+</div>
+<dl class="simple">
+<dt>Selenium server - это программа на Java. Для запуска Selenium server рекомендуется использовать</dt><dd><p>Java Runtime Environment (JRE) версии 1.6 или более новой.</p>
+</dd>
+</dl>
+<p>Скачать Selenium server 2.x можно <a class="reference external" href="http://seleniumhq.org/download/">на странице download сайта selenium</a>.  Имя файла должно быть вида: <code class="docutils literal notranslate"><span class="pre">selenium-server-standalone-2.x.x.jar</span></code>.
+Вы всегда можете скачать последнюю версию Selenium server 2.x.</p>
+<p>Если Java Runtime Environment (JRE) не установлена на вашем компьютере, вы можете скачать её
+на сайте <a class="reference external" href="http://www.oracle.com/technetwork/java/javase/downloads/index.html">JRE от Oracle</a>.  Если вы используете GNU/Linux,
+и у вас есть root-доступ к системе, используйте инструкции ОС для установки JRE.</p>
+<p>Если команда <cite>java</cite> доступна в переменной окружения PATH, вы можете запустить Selenium server командой:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">java</span> <span class="o">-</span><span class="n">jar</span> <span class="n">selenium</span><span class="o">-</span><span class="n">server</span><span class="o">-</span><span class="n">standalone</span><span class="o">-</span><span class="mf">2.</span><span class="n">x</span><span class="o">.</span><span class="n">x</span><span class="o">.</span><span class="n">jar</span>
+</pre></div>
+</div>
+<p>Замените <cite>2.x.x</cite> на номер версии Selenium server, которую вы скачали.</p>
+<p>Если JRE установлена не-root пользователем и/или если она недостуна в переменной окружения PATH,
+вы можете написать относительный или абсолютный путь к команде <cite>java</cite>.
+Аналогично, вы можете указать относительный или абсолютный путь к jar-файлу Selenium server.
+В этом случае команда будет выглядеть как-то так:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">java</span> <span class="o">-</span><span class="n">jar</span> <span class="o">/</span><span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">selenium</span><span class="o">-</span><span class="n">server</span><span class="o">-</span><span class="n">standalone</span><span class="o">-</span><span class="mf">2.</span><span class="n">x</span><span class="o">.</span><span class="n">x</span><span class="o">.</span><span class="n">jar</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="git">
+<h2><span class="section-number">1.6. </span>Установка из исходников в Git<a class="headerlink" href="#git" title="Permalink to this headline">¶</a></h2>
+<p>Чтобы собрать Selenium Python из исходников, нужно клонировать <a class="reference external" href="https://github.com/SeleniumHQ/selenium.git">официальный репозиторий</a>.  Он содержит исходники всех официальных Selenium,</p>
+<blockquote>
+<div><p>таких как Python, Java, Ruby и других.  Код на Python находится в директории <code class="docutils literal notranslate"><span class="pre">/py</span></code>.
+Для сборки вам также потребуется сборщик <a class="reference external" href="https://www.bazel.build">Bazel</a>.</p>
+</div></blockquote>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Сейчас, когда Selenium подбирается к релизу 4.0.0, он требует Bazel 3.2.0
+(<a class="reference external" href="https://docs.bazel.build/versions/3.2.0/install.html">Инструкции по установке</a>), несмотря на то, что версия 3.3.0
+уже доступна.</p>
+</div>
+<p>Чтобы собрать Wheel из исходников, запустите следующую команду в корне репозитория:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">bazel</span> <span class="o">//</span><span class="n">py</span><span class="p">:</span><span class="n">selenium</span><span class="o">-</span><span class="n">wheel</span>
+</pre></div>
+</div>
+<dl class="simple">
+<dt>Эта команда подготовит исходный код с некоторыми предобработанными файлами JS, которые нужны некоторым модулям</dt><dd><p>webdriver, и соберёт пакет <code class="docutils literal notranslate"><span class="pre">.whl</span></code> в директории <code class="docutils literal notranslate"><span class="pre">./bazel-bin/py/</span></code>.
+После этого вы можете использовать <code class="docutils literal notranslate"><span class="pre">pip</span></code> для установки.</p>
+</dd>
+</dl>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<p class="logo">
+  <a href="index.html">
+    <img class="logo" src="_static/logo.png" alt="Logo"/>
+    
+  </a>
+</p>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">1. Установка</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id2">1.1. Введение</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#python-bindings-selenium">1.2. Скачивание Python bindings для Selenium</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#drivers">1.3. Drivers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#windows">1.4. Инструкции для пользователей Windows</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#selenium">1.5. Скачивание сервера Selenium</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#git">1.6. Установка из исходников в Git</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="getting-started.html">2. Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="navigating.html">3. Navigating</a></li>
+<li class="toctree-l1"><a class="reference internal" href="locating-elements.html">4. Locating Elements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="waits.html">5. Waits</a></li>
+<li class="toctree-l1"><a class="reference internal" href="page-objects.html">6. Page Objects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api.html">7. WebDriver API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">8. Appendix: Frequently Asked Questions</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="index.html" title="previous chapter">Selenium with Python</a></li>
+      <li>Next: <a href="getting-started.html" title="next chapter"><span class="section-number">2. </span>Getting Started</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2011-2018, Baiju Muthukadan.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.4.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/installation.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
