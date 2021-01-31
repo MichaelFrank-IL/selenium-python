@@ -1,0 +1,258 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Selenium with Python &#8212; Selenium Python Bindings 2 documentation</title>
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="1. Установка" href="installation.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="selenium-with-python">
+<h1>Selenium with Python<a class="headerlink" href="#selenium-with-python" title="Permalink to this headline">¶</a></h1>
+<dl class="field-list simple">
+<dt class="field-odd">Author</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://muthukadan.net">Baiju Muthukadan</a></p>
+</dd>
+<dt class="field-even">License</dt>
+<dd class="field-even"><p>This document is licensed under a
+<a class="reference external" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.</p>
+</dd>
+<dt class="field-odd">Translation</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://github.com/MichaelFrank-IL">Michael Frank</a></p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This is not an official documentation.  If you would like to contribute to
+this documentation, you can <a class="reference external" href="https://github.com/baijum/selenium-python">fork this project in GitHub and send pull
+requests</a>.  You can also send
+your feedback to my email: baiju.m.mail AT gmail DOT com.  So far 50+
+community members have contributed to this project (See the closed pull
+requests).  I encourage contributors to add more sections and make it an
+awesome documentation!  If you know any translation of this document, please
+send a PR to update the below list.</p>
+<p><strong>Translations:</strong></p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://selenium-python-zh.readthedocs.io/en/latest/">Chinese</a></p></li>
+<li><p><a class="reference external" href="https://kurozumi.github.io/selenium-python/index.html">Japanese</a></p></li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">1. Установка</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#id2">1.1. Введение</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#python-bindings-selenium">1.2. Скачивание Python bindings для Selenium</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#drivers">1.3. Drivers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#windows">1.4. Инструкции для пользователей Windows</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#selenium">1.5. Скачивание сервера Selenium</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#git">1.6. Установка из исходников в Git</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="getting-started.html">2. Getting Started</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="getting-started.html#simple-usage">2.1. Simple Usage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting-started.html#example-explained">2.2. Example Explained</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting-started.html#using-selenium-to-write-tests">2.3. Using Selenium to write tests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting-started.html#walkthrough-of-the-example">2.4. Walkthrough of the example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting-started.html#using-selenium-with-remote-webdriver">2.5. Using Selenium with remote WebDriver</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="navigating.html">3. Navigating</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="navigating.html#interacting-with-the-page">3.1. Interacting with the page</a></li>
+<li class="toctree-l2"><a class="reference internal" href="navigating.html#filling-in-forms">3.2. Filling in forms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="navigating.html#drag-and-drop">3.3. Drag and drop</a></li>
+<li class="toctree-l2"><a class="reference internal" href="navigating.html#moving-between-windows-and-frames">3.4. Moving between windows and frames</a></li>
+<li class="toctree-l2"><a class="reference internal" href="navigating.html#popup-dialogs">3.5. Popup dialogs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="navigating.html#navigation-history-and-location">3.6. Navigation: history and location</a></li>
+<li class="toctree-l2"><a class="reference internal" href="navigating.html#cookies">3.7. Cookies</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="locating-elements.html">4. Locating Elements</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="locating-elements.html#locating-by-id">4.1. Locating by Id</a></li>
+<li class="toctree-l2"><a class="reference internal" href="locating-elements.html#locating-by-name">4.2. Locating by Name</a></li>
+<li class="toctree-l2"><a class="reference internal" href="locating-elements.html#locating-by-xpath">4.3. Locating by XPath</a></li>
+<li class="toctree-l2"><a class="reference internal" href="locating-elements.html#locating-hyperlinks-by-link-text">4.4. Locating Hyperlinks by Link Text</a></li>
+<li class="toctree-l2"><a class="reference internal" href="locating-elements.html#locating-elements-by-tag-name">4.5. Locating Elements by Tag Name</a></li>
+<li class="toctree-l2"><a class="reference internal" href="locating-elements.html#locating-elements-by-class-name">4.6. Locating Elements by Class Name</a></li>
+<li class="toctree-l2"><a class="reference internal" href="locating-elements.html#locating-elements-by-css-selectors">4.7. Locating Elements by CSS Selectors</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="waits.html">5. Waits</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="waits.html#explicit-waits">5.1. Explicit Waits</a></li>
+<li class="toctree-l2"><a class="reference internal" href="waits.html#implicit-waits">5.2. Implicit Waits</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="page-objects.html">6. Page Objects</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="page-objects.html#test-case">6.1. Test case</a></li>
+<li class="toctree-l2"><a class="reference internal" href="page-objects.html#page-object-classes">6.2. Page object classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="page-objects.html#page-elements">6.3. Page elements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="page-objects.html#locators">6.4. Locators</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="api.html">7. WebDriver API</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="api.html#module-selenium.common.exceptions">7.1. Exceptions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#module-selenium.webdriver.common.action_chains">7.2. Action Chains</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#module-selenium.webdriver.common.alert">7.3. Alerts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#module-selenium.webdriver.common.keys">7.4. Special Keys</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#locate-elements-by">7.5. Locate elements By</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#desired-capabilities">7.6. Desired Capabilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#module-selenium.webdriver.common.touch_actions">7.7. Touch Actions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#module-selenium.webdriver.common.proxy">7.8. Proxy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#module-selenium.webdriver.common.utils">7.9. Utilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#module-selenium.webdriver.common.service">7.10. Service</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#module-selenium.webdriver.common.html5.application_cache">7.11. Application Cache</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#module-selenium.webdriver.firefox.webdriver">7.12. Firefox WebDriver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#module-selenium.webdriver.firefox.options">7.13. Firefox WebDriver Options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#module-selenium.webdriver.firefox.firefox_profile">7.14. Firefox WebDriver Profile</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#module-selenium.webdriver.firefox.firefox_binary">7.15. Firefox WebDriver Binary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#module-selenium.webdriver.firefox.extension_connection">7.16. Firefox WebDriver Extension Connection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#module-selenium.webdriver.chrome.webdriver">7.17. Chrome WebDriver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#module-selenium.webdriver.chrome.options">7.18. Chrome WebDriver Options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#module-selenium.webdriver.chrome.service">7.19. Chrome WebDriver Service</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#module-selenium.webdriver.remote.webdriver">7.20. Remote WebDriver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#module-selenium.webdriver.remote.webelement">7.21. Remote WebDriver WebElement</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#module-selenium.webdriver.remote.command">7.22. Remote WebDriver Command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#module-selenium.webdriver.remote.errorhandler">7.23. Remote WebDriver Error Handler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#module-selenium.webdriver.remote.mobile">7.24. Remote WebDriver Mobile</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#module-selenium.webdriver.remote.remote_connection">7.25. Remote WebDriver Remote Connection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#module-selenium.webdriver.remote.utils">7.26. Remote WebDriver Utils</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#module-selenium.webdriver.ie.webdriver">7.27. Internet Explorer WebDriver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#module-selenium.webdriver.android.webdriver">7.28. Android WebDriver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#module-selenium.webdriver.opera.webdriver">7.29. Opera WebDriver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#module-selenium.webdriver.phantomjs.webdriver">7.30. PhantomJS WebDriver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#module-selenium.webdriver.phantomjs.service">7.31. PhantomJS WebDriver Service</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#module-selenium.webdriver.safari.webdriver">7.32. Safari WebDriver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#module-selenium.webdriver.safari.service">7.33. Safari WebDriver Service</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#module-selenium.webdriver.support.select">7.34. Select Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#module-selenium.webdriver.support.wait">7.35. Wait Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#module-selenium.webdriver.support.color">7.36. Color Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#module-selenium.webdriver.support.event_firing_webdriver">7.37. Event Firing WebDriver Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#module-selenium.webdriver.support.abstract_event_listener">7.38. Abstract Event Listener Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#module-selenium.webdriver.support.expected_conditions">7.39. Expected conditions Support</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">8. Appendix: Frequently Asked Questions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="faq.html#how-to-use-chromedriver">8.1. How to use ChromeDriver ?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="faq.html#does-selenium-2-support-xpath-2-0">8.2. Does Selenium 2 support XPath 2.0 ?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="faq.html#how-to-scroll-down-to-the-bottom-of-a-page">8.3. How to scroll down to the bottom of a page ?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="faq.html#how-to-auto-save-files-using-custom-firefox-profile">8.4. How to auto save files using custom Firefox profile ?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="faq.html#how-to-upload-files-into-file-inputs">8.5. How to upload files into file inputs ?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="faq.html#how-to-use-firebug-with-firefox">8.6. How to use firebug with Firefox ?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="faq.html#how-to-take-screenshot-of-the-current-window">8.7. How to take screenshot of the current window ?</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="indices-and-tables">
+<h2>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></p></li>
+<li><p><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></p></li>
+<li><p><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></p></li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<p class="logo">
+  <a href="#">
+    <img class="logo" src="_static/logo.png" alt="Logo"/>
+    
+  </a>
+</p>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">1. Установка</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getting-started.html">2. Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="navigating.html">3. Navigating</a></li>
+<li class="toctree-l1"><a class="reference internal" href="locating-elements.html">4. Locating Elements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="waits.html">5. Waits</a></li>
+<li class="toctree-l1"><a class="reference internal" href="page-objects.html">6. Page Objects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api.html">7. WebDriver API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">8. Appendix: Frequently Asked Questions</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="#">Documentation overview</a><ul>
+      <li>Next: <a href="installation.html" title="next chapter"><span class="section-number">1. </span>Установка</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2011-2018, Baiju Muthukadan.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.4.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/index.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
